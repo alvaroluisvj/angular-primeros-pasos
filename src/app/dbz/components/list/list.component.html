@@ -1,0 +1,36 @@
+<h4>Listado</h4>
+    <ul class="list-group">
+
+      <li *ngFor=" let character of characterList; let i = index; let isFirst = first; let isLast = last;
+      let isEven = even;
+      let isOdd = odd;
+      "
+
+      class="list-group-item d-flex justify-content-between align-items-center"
+      [ngClass]="{
+        'list-group-item-success': isFirst,
+        'list-group-item-secondary': isLast,
+        }">
+
+        <div>
+          <span class="text-primary">{{i + 1}}. </span>
+          <span>{{ character.name }} - </span>
+          <strong>power: </strong>
+          <span>({{ character.power }})</span>
+        </div>
+
+        <button (click)="onDeleteCharacter(character.id)" class="btn btn-danger">X</button>
+
+    </li>
+</ul>
+<!--
+      let character of characterList; / La funcion del ngFor normal
+      let i = index; / para saber el index
+      let isFirst = first; / para saber cual el numero primero
+      let isLast = last; / para saber cual es el ultimo numero
+      let isEven = even" / para saber si es numero par
+      let isOdd = odd; / para saber si un numero es impar
+
+      NOTA IMPORTANTE: cuando le ponemos [] en una clase es diciendole a angular
+      que tome el control de esta clase. por Ejemplo: [class]="list-group-item"
+       -->

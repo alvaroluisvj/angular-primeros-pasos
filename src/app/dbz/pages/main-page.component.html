@@ -1,0 +1,17 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <dbz-list (onDeleteId)="onDeleteCharacter($event)" [listaCaracteres]="characters"></dbz-list>
+    <!-- <dbz-list [characterList]="characters"></dbz-list> -->
+  </div>
+
+  <div class="col">
+    <dbz-add-character (onNewCharacter)="addNewCaracter($event)"></dbz-add-character>
+  </div>
+</div>
+<!--
+<dbz-add-character (onNewCharacter)="entradaCharacter($event)"></dbz-add-character>
+esto apunta al archivo .ts en cual recibe el evenEmitter desde main-page
+ -->
